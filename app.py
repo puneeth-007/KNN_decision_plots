@@ -19,7 +19,11 @@ from sklearn.datasets import make_moons
 from sklearn.datasets import make_circles
 from sklearn.metrics import accuracy_score
 
-st.title('Decision_surfaces for KNN')
+st.markdown('<h1 style="text-align: center;">KNN Decision Surfaces</h1>', unsafe_allow_html=True)
+
+## adding logo
+
+st.image('logo.jpg', use_column_width=True)
 
 da=st.selectbox('Choose dataset',['classification', 'blobs', 'moons', 'circles'])
 k=st.slider("Choose no of neighbors", 1, 40, 1)
