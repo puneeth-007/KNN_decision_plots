@@ -41,7 +41,7 @@ if st.button('Submit'):
         plot_learning_curves(knn,X,y)
         st.pyplot(plt)
     
-     elif da=='blobs':
+    elif da=='blobs':
         X, y = make_blobs(n_samples=1000, n_features=2, random_state=20)
         knn=KNeighborsClassifier(n_neighbors=k,weights=w,algorithm=al)
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=20)
