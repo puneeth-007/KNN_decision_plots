@@ -1,5 +1,6 @@
 
 from ast import Div
+from ctypes import alignment
 from re import M
 import streamlit as st
 from sklearn.neighbors import KNeighborsClassifier
@@ -22,7 +23,7 @@ from sklearn.metrics import accuracy_score
 import warnings
 warnings.filterwarnings("ignore")
 
-st.markdown('<h1 style="text-align: center;">KNN Decision and learning curve</h1>', unsafe_allow_html=True)
+st.markdown('<h1 style="text-align: center;">KNN Decision and learning curve</h1>',alignment='center', unsafe_allow_html=True)
 
 ## adding logo
 
