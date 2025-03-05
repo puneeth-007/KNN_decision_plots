@@ -61,7 +61,7 @@ if st.button('Submit'):
     elif da=='moons':
         X,y=make_moons(n_samples=1000,noise=0.1,random_state=20)
         knn=KNeighborsClassifier(n_neighbors=k,weights=w,algorithm=al)
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=20)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=24)
         knn.fit(X_train,y_train)
         y_pred=knn.predict(X_test)
 
