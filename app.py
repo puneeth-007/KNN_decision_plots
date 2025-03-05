@@ -7,7 +7,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
 from mlxtend.plotting import plot_decision_regions
-from mlxtedn.plotting import plot_learning_curves
+from mlxtend.plotting import plot_learning_curves
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
