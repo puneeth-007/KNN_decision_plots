@@ -1,4 +1,5 @@
 
+from re import M
 import streamlit as st
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
@@ -57,6 +58,50 @@ if st.button('Submit'):
         plot_learning_curves(X_train,y_train,X_test,y_test,knn,scoring='accuracy')
         st.pyplot(plt)
 
+    elif da=='moons':
+        X,y=make_moons(n_samples=1000,noise=0.1,random_state=20)
+        knn=KNeighborsClassifier(n_neighbors=k,weights=w,algorithm=al)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=20)
+        knn.fit(X_train,y_train)
+        y_pred=knn.predict(X_test)
+
+        st.write('Accuracy',accuracy_score(y_test,y_pred))
+        plt.figure(figsize=(10,10))
+        plot_decision_regions(X, y,knn)
+        st.pyplot(plt)
+        plt.figure(figsize=(10,10))
+        plot_learning_curves(X_train,y_train,X_test,y_test,knn,scoring='accuracy')
+        st.pyplot(plt)
+
+    elif da=='circles':
+        X,y = make_circles(n_samples=1000,noise=0.1,random_state=20)
+        knn=KNeighborsClassifier(n_neighbors=k,weights=w,algorithm=al)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=20)
+        knn.fit(X_train,y_train)
+        y_pred=knn.predict(X_test)
+
+        st.write('Accuracy',accuracy_score(y_test,y_pred))
+        plt.figure(figsize=(10,10))
+        plot_decision_regions(X, y,knn)
+        st.pyplot(plt)
+        plt.figure(figsize=(10,10))
+        plot_learning_curves(X_train,y_train,X_test,y_test,knn,scoring='accuracy')
+        st.pyplot(plt)
+    
+    elif da=='blobs':
+        X,y=make_blobs(n_samples=1000, n_features=2, random_state=20)
+        knn=KNeighborsClassifier(n_neighbors=k,weights=w,algorithm=al)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=20)
+        knn.fit(X_train,y_train)
+        y_pred=knn.predict(X_test)
+
+        st.write('Accuracy',accuracy_score(y_test,y_pred))
+        plt.figure(figsize=(10,10))
+        plot_decision_regions(X, y,knn)
+        st.pyplot(plt)
+        plt.figure(figsize=(10,10))
+        plot_learning_curves(X_train,y_train,X_test,y_test,knn,scoring='accuracy')
+        st.pyplot(plt)
 
 
 
