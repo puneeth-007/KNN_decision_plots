@@ -25,7 +25,7 @@ st.markdown('<h1 style="text-align: center;">KNN Decision Surfaces</h1>', unsafe
 
 ## adding logo
 
-st.image('logo.jpg', use_column_width=True)
+st.image('logo.jpg', use_container_width=True)
 
 da=st.selectbox('Choose dataset',['classification', 'blobs', 'moons', 'circles'])
 k=st.slider("Choose no of neighbors", 1, 40, 1)
