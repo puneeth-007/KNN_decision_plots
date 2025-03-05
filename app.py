@@ -16,7 +16,7 @@ from sklearn.datasets import make_classification
 from sklearn.datasets import make_blobs
 from sklearn.datasets import make_moons
 from sklearn.datasets import make_circles
-
+from sklearn.metrics import accuracy_score
 
 st.title('Decision_surfaces for KNN')
 
@@ -25,14 +25,16 @@ k=st.slider("Choose no of neighbors", 1, 40, 1)
 w=st.selectbox('Choose weight',['uniform','distance'])
 al=st.selectbox('Choose algorithm',['ball_tree', 'kd_tree', 'brute'])
 
-if da=='classification':
-    X, y = make_classification(n_samples=1000, n_features=2, n_redundant=0, n_repeated=0,random_state=20)
-    knn=KNeighborsClassifier(n_neighbors=k,weights=w,algorithm=al)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=20)
-    knn.fit(X_train,y_train)
-    y_pred=knn.predict(X_test)
-    plot_decision_regions(X, y, clf=knn, legend=2)
-
+if st.button('Submit'):
+    if da=='classification':
+        X, y = make_classification(n_samples=1000, n_features=2, n_redundant=0, n_repeated=0,random_state=20)
+        knn=KNeighborsClassifier(n_neighbors=k,weights=w,algorithm=al)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=20)
+        knn.fit(X_train,y_train)
+        y_pred=knn.predict(X_test)
+        st.write('Accuracy',accuracy_score(y_test,y_pred))
+        plot_decision_regions(X, y, clf=knn, legend=2)
+        plt.show()
 
 
 
