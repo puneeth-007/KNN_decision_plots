@@ -39,9 +39,7 @@ if st.button('Submit'):
         knn=KNeighborsClassifier(n_neighbors=k,weights=w,algorithm=al)
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=20)
         knn.fit(X_train,y_train)
-        y_pred=knn.predict(X_test)
-        
-        st.write('Accuracy',accuracy_score(y_test,y_pred))
+
         plt.figure(figsize=(10,10))
         st.header('Decision surface',divider='rainbow')
         plot_decision_regions(X, y,knn)
@@ -57,13 +55,14 @@ if st.button('Submit'):
         knn=KNeighborsClassifier(n_neighbors=k,weights=w,algorithm=al)
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=20)
         knn.fit(X_train,y_train)
-        y_pred=knn.predict(X_test)
 
-        st.write('Accuracy',accuracy_score(y_test,y_pred))
         plt.figure(figsize=(10,10))
+        st.header('Decision surface',divider='rainbow')
         plot_decision_regions(X, y,knn)
         st.pyplot(plt)
+
         plt.figure(figsize=(10,10))
+        st.header('Learning curve',divider='rainbow')
         plot_learning_curves(X_train,y_train,X_test,y_test,knn,scoring='accuracy')
         st.pyplot(plt)
 
@@ -72,13 +71,14 @@ if st.button('Submit'):
         knn=KNeighborsClassifier(n_neighbors=k,weights=w,algorithm=al)
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=24)
         knn.fit(X_train,y_train)
-        y_pred=knn.predict(X_test)
-
-        st.write('Accuracy',accuracy_score(y_test,y_pred))
+   
         plt.figure(figsize=(10,10))
+        st.header('Decision surface',divider='rainbow')
         plot_decision_regions(X, y,knn)
         st.pyplot(plt)
+
         plt.figure(figsize=(10,10))
+        st.header('Learning curve',divider='rainbow')
         plot_learning_curves(X_train,y_train,X_test,y_test,knn,scoring='accuracy')
         st.pyplot(plt)
 
@@ -87,13 +87,14 @@ if st.button('Submit'):
         knn=KNeighborsClassifier(n_neighbors=k,weights=w,algorithm=al)
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=20)
         knn.fit(X_train,y_train)
-        y_pred=knn.predict(X_test)
-
-        st.write('Accuracy',accuracy_score(y_test,y_pred))
+        
         plt.figure(figsize=(10,10))
+        st.header('Decision surface',divider='rainbow')
         plot_decision_regions(X, y,knn)
         st.pyplot(plt)
+
         plt.figure(figsize=(10,10))
+        st.header('Learning curve',divider='rainbow')
         plot_learning_curves(X_train,y_train,X_test,y_test,knn,scoring='accuracy')
         st.pyplot(plt)
     
@@ -102,13 +103,14 @@ if st.button('Submit'):
         knn=KNeighborsClassifier(n_neighbors=k,weights=w,algorithm=al)
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=20)
         knn.fit(X_train,y_train)
-        y_pred=knn.predict(X_test)
-
-        st.write('Accuracy',accuracy_score(y_test,y_pred))
+     
         plt.figure(figsize=(10,10))
+        st.header('Decision surface',divider='rainbow')
         plot_decision_regions(X, y,knn)
         st.pyplot(plt)
+
         plt.figure(figsize=(10,10))
+        st.header('Learning curve',divider='rainbow')
         plot_learning_curves(X_train,y_train,X_test,y_test,knn,scoring='accuracy')
         st.pyplot(plt)
 
