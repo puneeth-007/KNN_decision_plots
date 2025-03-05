@@ -17,6 +17,10 @@ from sklearn.datasets import make_blobs
 from sklearn.datasets import make_moons
 from sklearn.datasets import make_circles
 
+st.title('Decision_surfaces for KNN')
+
+
+
 
 
 
