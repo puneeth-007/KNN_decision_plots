@@ -1,4 +1,5 @@
 
+from ast import Div
 from re import M
 import streamlit as st
 from sklearn.neighbors import KNeighborsClassifier
@@ -21,7 +22,7 @@ from sklearn.metrics import accuracy_score
 import warnings
 warnings.filterwarnings("ignore")
 
-st.markdown('<h1 style="text-align: center;">KNN Decision Surfaces</h1>', unsafe_allow_html=True)
+st.markdown('<h1 style="text-align: center;">KNN Decision and learning curve</h1>', unsafe_allow_html=True)
 
 ## adding logo
 
@@ -42,10 +43,12 @@ if st.button('Submit'):
         
         st.write('Accuracy',accuracy_score(y_test,y_pred))
         plt.figure(figsize=(10,10))
+        st.header('Decision surface',divider='rainbow')
         plot_decision_regions(X, y,knn)
         st.pyplot(plt)
 
         plt.figure(figsize=(10,10))
+        st.header('Learning curve',divider='rainbow')
         plot_learning_curves(X_train,y_train,X_test,y_test,knn,scoring='accuracy')
         st.pyplot(plt)
     
