@@ -19,6 +19,8 @@ from sklearn.datasets import make_circles
 
 st.title('Decision_surfaces for KNN')
 
+st.dropdown('Dataset',('Blobs','Moons','Circles','Classification'))
+
 
 
 
