@@ -18,11 +18,10 @@ from sklearn.datasets import make_circles
 
 st.title('Decision_surfaces for KNN')
 
-da=st.selectbox('Choose dataset',['make_classification', 'make_blobs', 'make_moons', 'make_circles'])
-k=st.slider(min_value=1, max_value=40,step=1)
-w=st.select_box('Choose weight',['uniform','distance'])
+da=st.selectbox('Choose dataset',['classification', 'blobs', 'moons', 'circles'])
+k=st.slider("Choose no of neighbors", 1, 40, 1)
+w=st.selectbox('Choose weight',['uniform','distance'])
 
-w=st.selectbox('Choose weights',[])
 if da=='make_classification':
     X, y = make_classification(n_samples=1000, n_features=2, n_redundant=0, n_repeated=0,random_state=20)
     knn=KNeighborsClassifier(n_neighbors=k,weights=w)
