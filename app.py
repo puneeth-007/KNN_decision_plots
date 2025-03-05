@@ -53,7 +53,7 @@ if st.button('Submit'):
         plot_decision_regions(X, y,knn)
         st.pyplot(plt)
         plt.figure(figsize=(10,10))
-        plot_learning_curves(X,y,knn)
+        plot_learning_curves(X_train,y_train,X_test,y_test,knn,scoring='accuracy')
         st.pyplot(plt)
 
 
