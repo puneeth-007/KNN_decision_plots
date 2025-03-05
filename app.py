@@ -38,6 +38,9 @@ if st.button('Submit'):
         plot_decision_regions(X, y,knn)
         st.pyplot(plt)
 
+        plot_learning_curves(knn,X,y)
+        st.pyplot(plt)
+
 
 
 
