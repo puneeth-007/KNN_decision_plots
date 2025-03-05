@@ -18,6 +18,8 @@ from sklearn.datasets import make_blobs
 from sklearn.datasets import make_moons
 from sklearn.datasets import make_circles
 from sklearn.metrics import accuracy_score
+import warnings
+warning.filterwarnings("ignore")
 
 st.markdown('<h1 style="text-align: center;">KNN Decision Surfaces</h1>', unsafe_allow_html=True)
 
