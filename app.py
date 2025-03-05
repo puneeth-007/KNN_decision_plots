@@ -33,8 +33,8 @@ if st.button('Submit'):
         knn.fit(X_train,y_train)
         y_pred=knn.predict(X_test)
         st.write('Accuracy',accuracy_score(y_test,y_pred))
-        fig=plot_decision_regions(X, y,knn)
-        st.pyplot(fig)
+        plot_decision_regions(X, y,knn)
+        plt.show()
 
 
 
